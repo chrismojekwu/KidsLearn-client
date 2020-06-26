@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# KidsLearn
+One line description of what this app is doing and who is it for
 
-## Available Scripts
+## Working Prototype
+You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
 
-In the project directory, you can run:
 
-### `npm start`
+## User Stories
+This app is for two types of users: a parent and a child.
+View the user stories here:(https://1drv.ms/w/s!Avi_kmSgRBVYggAuTows6ly6X6IQ?e=J9o3E4)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### Landing Page
+* as a visitor
+* I want to understand what I can do with this app (or sign up, or log in)
+* so I can decide if I want to use it
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Wireframes
+Landing/Login Page
+:-------------------------:
+![Landing/Login Page](/github-images/wireframes/landing-page-wireframe.png)
+Landing/Register Page
+![Landing/Register Page](/github-images/wireframes/landing-page-wireframe.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
+Landing/Login Page
+:-------------------------:
+![Landing Page](/github-images/screenshots/login-page-screenshot.png)
+Landing/Register Page
+![Register Page](/github-images/screenshots/login-page-screenshot.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Functionality
+The app's functionality includes:
+* Every User has the ability to create an account
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technology
+* Front-End: HTML5, CSS3, JavaScript ES6, React
+* Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
+* Development Environment: Heroku, DBeaver
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Front-end Structure - React Components Map
+* __Index.js__ (stateless)
+    * __App.js__ (stateful)
+        * __LandingPage.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
+            * __Login.js__ (stateful) -
+            * __Register.js__ (stateful) -
+        * __Navbar.js__ (stateless) -
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Back-end Structure - Business Objects
+* User (database table)
+    * Username (email validation)
+    * Password (at least 8 chars, at least one alpha and a special character validation)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## API Documentation
+API Documentation details:
+* get all users
 
-## Learn More
+## Responsive
+App is built to be usable on mobile devices, as well as responsive across mobile, tablet, laptop, and desktop screen resolutions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Development Roadmap
+This is v1.0 of the app, but future enhancements are expected to include:
+* add more functionality
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## How to run it
+Use command line to navigate into the project folder and run the following in terminal
 
-### Code Splitting
+### Local Node scripts
+* To install the node project ===> npm install
+* To migrate the database ===> npm run migrate -- 1
+* To run Node server (on port 8000) ===> npm run dev
+* To run tests ===> npm run test
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Local React scripts
+* To install the react project ===> npm install
+* To run react (on port 3000) ===> npm start
+* To run tests ===> npm run test
