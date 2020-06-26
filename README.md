@@ -1,5 +1,5 @@
 # KidsLearn
-One line description of what this app is doing and who is it for
+KidsLearn is a platform centered around children aged 1-3 years old and their parents to help parents teach the basics and provide young children with more productive screentime. 
 
 ## Working Prototype
 You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
