@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Shapes from "../Shapes/Shapes";
 
-it("renders App without crashing", () => {
+it("renders Shapes component without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(App, div);
+  ReactDOM.render(Shapes, div);
   ReactDOM.unmountComponentAtNode(div);
 });

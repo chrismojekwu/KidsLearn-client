@@ -1,26 +1,152 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Nav from "./components/Nav";
+import Doodle from "../src/Doodle/Doodle";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Progress from "./components/Progress";
+import ProgressForm from "./components/ProgressForm";
+import Letters from "./Letters/Letters";
+import Shapes from "./Shapes/Shapes";
+import Objects from "./Objects/Objects";
+import Footer from "./components/Footer";
+import Animals from "./Animals/Animals";
+import Clothing from "./Clothing/Clothing";
+import PrivateRoute from "../src/components/Utils/PrivateRoute";
+import WelcomeInstructions from "../src/Instructions/WelcomeInstructions";
+import ProgressInstructions from "../src/Instructions/ProgressInstructions";
+import header from "../src/img/kidslearn3.png";
+import { Route, Link } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.sideRef = React.createRef();
+    this.state = {
+      clothingScore: "CLOTHING TEST NOT TAKEN YET",
+    };
+  }
+
+  updateClothing = (num) => {
+    this.setState({
+      clothingScore: num.toString(),
+    });
+  };
+
+  clearScore = () => {
+    this.setState({
+      clothingScore: "CLOTHING TEST NOT TAKEN YET",
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <header>
+          <Link to="/progress">
+            <img src={header} className="header-logo" />
+          </Link>
+        </header>
+        <Route
+          exact
+          path={[
+            "/",
+            "/progress",
+            "/sign-up",
+            "/doodle",
+            "/letters",
+            "/shapes",
+            "/objects",
+            "/animals",
+            "/clothing",
+          ]}
+          render={(props) => <Nav {...props} />}
+        />
+        <section className="page">
+          <section className="sidebar" ref={this.sideRef}>
+            <Route
+              exact
+              path={[
+                "/doodle",
+                "/letters",
+                "/shapes",
+                "/objects",
+                "/animals",
+                "/clothing",
+              ]}
+              render={(props) => (
+                <ProgressForm clothing={this.state.clothingScore} {...props} />
+              )}
+            />
+            <Route
+              exact
+              path="/progress"
+              render={(props) => <ProgressInstructions />}
+            />
+            <Route exact path="/" render={(props) => <WelcomeInstructions />} />
+          </section>
+          <main className="container">
+            <Route
+              exact
+              path="/"
+              render={(props) => (
+                <Login clearScore={this.clearScore} {...props} />
+              )}
+            />
+            <Route
+              exact
+              path="/sign-up"
+              render={(props) => <Signup {...props} />}
+            />
+            <PrivateRoute
+              path={"/progress"}
+              component={Progress}
+              clearScore={this.clearScore}
+            />
+            <Route exact path="/letters" render={(props) => <Letters />} />
+            <Route exact path="/shapes" render={(props) => <Shapes />} />
+            <Route exact path="/objects" render={(props) => <Objects />} />
+            <Route exact path="/animals" render={(props) => <Animals />} />
+            <Route
+              exact
+              path="/clothing"
+              render={(props) => (
+                <Clothing
+                  score={this.state.clothingScore}
+                  clothing={this.updateClothing}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/doodle"
+              render={(props) => (
+                <Doodle sideRef={this} sideWidth={this.state.sideBarWidth} />
+              )}
+            />
+          </main>
+        </section>
+
+        <footer>
+          <Route
+            exact
+            path={[
+              "/",
+              "/progress",
+              "/sign-up",
+              "/doodle",
+              "/letters",
+              "/shapes",
+              "/objects",
+              "/animals",
+              "/clothing",
+            ]}
+            render={(props) => <Footer />}
+          />
+        </footer>
+      </>
+    );
+  }
 }
 
 export default App;

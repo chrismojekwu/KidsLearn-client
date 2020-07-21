@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Clothing from "../Clothing/Clothing";
 
-it("renders App without crashing", () => {
+it("renders Clothing component without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(App, div);
+  ReactDOM.render(Clothing, div);
   ReactDOM.unmountComponentAtNode(div);
 });

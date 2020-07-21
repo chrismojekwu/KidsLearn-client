@@ -1,38 +1,408 @@
-.App {
+/*   GLOBAL STYLES   */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+header {
+  text-align: center;
+}
+.header-logo {
+  height: 70px;
+  width: auto;
+}
+.page {
+  display: flex;
+}
+.sidebar {
+  flex: 0.5;
+}
+.container {
+  flex: 2;
+  background-color: rgb(70, 218, 137);
+  bottom: 800px;
+  overflow-x: auto;
+}
+footer {
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  background-color: rgb(121, 25, 62);
+}
+.inputslabels {
+  display: block;
+  margin-top: 10px;
+}
+.loginsignup {
+  min-width: auto;
+  max-width: 90%;
+}
+a {
+  text-decoration: none;
+}
+select {
+  margin-left: 10px;
+}
+input {
+  font-size: 16px;
+  margin: auto;
+}
+#journal {
+  margin: auto;
+  height: 100px;
+  width: 90%;
+}
+.footy-info {
+  font-size: 12px;
+  padding-top: 10px;
+}
+.icons {
+  margin-top: 5px;
+  height: 20px;
+  width: auto;
+  padding-left: 10px;
+}
+
+/*   HEADER/NAV   */
+nav {
+  padding: 0.5rem;
+  text-align: center;
+  background-color: rgb(161, 194, 238);
+}
+.nav-link {
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.534);
+  border-radius: 5px 5px 5px 5px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(17, 16, 75);
+  text-align: center;
+  line-height: 28px;
+  text-align: center;
+  text-decoration: none;
+  width: 19%;
+  margin-left: 2px;
+  margin-top: 2px;
+  overflow: hidden;
+}
+.nav-link:hover {
+  animation: shake 0.5s;
+  transition: 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+/*   WELCOME / LOGIN FORM   */
+.login {
+  margin: auto;
+  width: 85%;
+  text-align: center;
+  height: 480px;
+  padding: 10px;
+}
+.login-form {
+  border-width: 1px;
+  background: linear-gradient(
+    245deg,
+    rgb(73, 234, 255) 50%,
+    rgb(140, 152, 216) 50%
+  );
+  height: 300px;
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.534);
+  margin-top: 5px;
+}
+.login-form:hover {
+  box-shadow: 2px 6px 10px 2px rgba(0, 0, 0, 0.534);
+  transition: 0.3s;
+}
+#login-btn {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.forgot-anchor {
+  margin-top: 5px;
+  display: block;
+}
+
+/*   SIGN UP FORM   */
+.signup {
+  margin: auto;
+  padding: 10px;
+  width: 85%;
+  text-align: center;
+}
+.signup-form {
+  padding: 10px;
+  background: linear-gradient(
+    170deg,
+    rgb(248, 168, 77) 50%,
+    rgb(245, 228, 153) 50%
+  );
+  height: fit-content;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.534);
+}
+.signup-form:hover {
+  box-shadow: 2px 6px 10px 2px rgba(0, 0, 0, 0.534);
+  transition: 0.3s;
+}
+#signup-submit {
+  margin-top: 10px;
+}
+
+/*   PROGRESS REPORT   */
+.progress {
+  height: 480px;
+}
+.progress-text {
+  margin-left: 10px;
+  position: sticky;
+  left: auto;
+}
+.signout {
+  font-size: 16px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.card-container {
+  display: flex;
+  min-width: 100%;
+  min-height: 80%;
+  overflow-x: auto;
+}
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+.progressreport {
+  background: linear-gradient(34deg, #ffff 50%, rgb(248, 148, 198) 50%);
+  min-width: 250px;
+  max-height: 375px;
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.534);
+  overflow-y: auto;
+}
+.progressreport::-webkit-scrollbar {
+  display: none;
+}
+.progress-titles {
+  margin-bottom: 0;
+}
+h2.progress-titles {
+  text-align: center;
+}
+.progress-values {
+  margin-top: 0;
+}
+.no-reports {
+  font-size: 16px;
+  text-align: center;
+}
+.progress-badges {
+  border: tomato solid;
+  border-width: 1px;
+  height: 20%;
+}
+
+/*   PROGRESS FORM   */
+.progress-form {
+  border: solid gray;
+  border-width: 1px;
+  height: auto;
+  max-height: 500px;
+  text-align: center;
+  overflow-y: auto;
+}
+
+/*   INSTRUCTIONS   */
+.instructions {
+  height: auto;
+  max-height: 480px;
+  text-align: center;
+  overflow-y: auto;
+  font-size: 14px;
+  padding: 20px;
+  background-color: rgb(158, 207, 240);
+  color: rgb(0, 0, 0);
+}
+
+/*   ACTIVITIES   */
+.display {
+  border-width: 1px;
+  border: solid gray;
+  border-radius: 10px 5px;
+  width: 95%;
+  margin: auto;
+  height: 400px;
+}
+.controls {
+  border-width: 1px;
+  border: solid gray;
+  border-radius: 10px 5px;
+  width: 95%;
+  min-height: 70px;
+  max-height: fit-content;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+}
+/*LETTERS*/
+.letterDisplay {
+  background-color: rgba(255, 255, 255, 0.692);
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  height: 400px;
+  font-size: 80px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+.letterInput {
+  width: 80%;
+  font-size: 24px;
+}
+/*SHAPES*/
+.shapesdisplay {
+  border-width: 1px;
+  background-color: white;
+  border: solid gray;
+  border-radius: 10px 5px;
+  width: 95%;
+  margin: auto;
+  height: 400px;
+  text-align: center;
+}
+.shape {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+}
+.renderedSvg {
+  margin: auto;
+}
+/*OBJECTS*/
+.objectsdisplay {
+  border-width: 1px;
+  background-color: white;
+  border: solid gray;
+  border-radius: 10px 5px;
+  width: 95%;
+  margin: auto;
+  height: 400px;
+  text-align: center;
+}
+#objectlarge {
+  margin-top: 10px;
+}
+#objecticon {
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+/*ANIMALS*/
+.animalsdisplay {
+  background-color: rgba(255, 255, 255, 0.692);
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  height: 400px;
+  font-size: 80px;
+}
+.selectedAnimal {
+  margin-top: 2%;
+  height: 90%;
+}
+/*CLOTHING*/
+.clothing {
+  background-color: rgba(255, 255, 255, 0.692);
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  height: 400px;
+  word-wrap: break-word;
+  overflow-y: auto;
+}
+.quiz-pair {
+  display: block;
+}
+.clothing-image {
+  margin-top: 5px;
+  width: 100px;
+  display: inline-block;
+}
+.clothing-input {
+  display: block;
+  border-width: 1px;
+  border: solid gray;
+  width: 200px;
+}
+form.display {
+  border-width: 1px;
+  border: solid gray;
+  width: 60%;
+  margin: auto;
+  height: 400px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*   DOODLE   */
+canvas {
+  background-color: white;
+}
+.radiobox {
+  border: 5px solid;
+  width: fit-content;
+  display: inline-block;
+  margin-left: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/*   MEDIA QUERIES   */
+
+@media screen and (min-width: 760px) {
+  .container {
+    bottom: 530px;
+  }
+  .landing {
+    bottom: 0;
+  }
+  .nav-link {
+    display: inline-block;
+  }
+  .activity-btn {
+    margin-left: 0.5%;
+    width: 12%;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .activity {
+    bottom: 274px;
+  }
+  .header-logo {
+    height: 100px;
+  }
+  .login {
+    width: 50%;
+  }
+  .signup {
+    width: 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (min-width: 935px) {
 }

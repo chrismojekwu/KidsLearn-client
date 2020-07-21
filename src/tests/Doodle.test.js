@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import Doodle from "../Doodle/Doodle";
 
-it("renders App without crashing", () => {
+it("renders Doodle component without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(App, div);
+  ReactDOM.render(Doodle, div);
   ReactDOM.unmountComponentAtNode(div);
 });
