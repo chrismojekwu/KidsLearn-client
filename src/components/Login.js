@@ -64,9 +64,6 @@ function Login(props) {
           <a href="/sign-up" className="signup-anchor">
             Sign Up
           </a>
-          <a href="#" className="forgot-anchor">
-            Forgot Password or Username?
-          </a>
         </div>
       </>
     );

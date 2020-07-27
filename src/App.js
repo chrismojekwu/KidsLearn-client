@@ -15,6 +15,7 @@ import Clothing from "./Clothing/Clothing";
 import PrivateRoute from "../src/components/Utils/PrivateRoute";
 import WelcomeInstructions from "../src/Instructions/WelcomeInstructions";
 import ProgressInstructions from "../src/Instructions/ProgressInstructions";
+import ReportSharePage from "./components/ReportSharePage";
 import header from "../src/img/kidslearn3.png";
 import { Route, Link } from "react-router-dom";
 
@@ -23,7 +24,7 @@ class App extends React.Component {
     super(props);
     this.sideRef = React.createRef();
     this.state = {
-      clothingScore: "CLOTHING TEST NOT TAKEN YET",
+      clothingScore: "NO CLOTHING SCORE",
     };
   }
 
@@ -35,7 +36,7 @@ class App extends React.Component {
 
   clearScore = () => {
     this.setState({
-      clothingScore: "CLOTHING TEST NOT TAKEN YET",
+      clothingScore: "NO CLOTHING SCORE",
     });
   };
 
@@ -44,7 +45,7 @@ class App extends React.Component {
       <>
         <header>
           <Link to="/progress">
-            <img src={header} className="header-logo" />
+            <img src={header} className="header-logo" alt="kids learn logo" />
           </Link>
         </header>
         <Route
@@ -59,6 +60,7 @@ class App extends React.Component {
             "/objects",
             "/animals",
             "/clothing",
+            "/share/:rep_id",
           ]}
           render={(props) => <Nav {...props} />}
         />
@@ -83,7 +85,11 @@ class App extends React.Component {
               path="/progress"
               render={(props) => <ProgressInstructions />}
             />
-            <Route exact path="/" render={(props) => <WelcomeInstructions />} />
+            <Route
+              exact
+              path={["/", "/share/:rep_id"]}
+              render={(props) => <WelcomeInstructions />}
+            />
           </section>
           <main className="container">
             <Route
@@ -124,6 +130,11 @@ class App extends React.Component {
                 <Doodle sideRef={this} sideWidth={this.state.sideBarWidth} />
               )}
             />
+            <Route
+              exact
+              path="/share/:rep_id"
+              render={(props) => <ReportSharePage {...props} />}
+            />
           </main>
         </section>
 
@@ -140,6 +151,7 @@ class App extends React.Component {
               "/objects",
               "/animals",
               "/clothing",
+              "/share/:rep_id",
             ]}
             render={(props) => <Footer />}
           />

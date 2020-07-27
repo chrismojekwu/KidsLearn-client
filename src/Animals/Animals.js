@@ -45,7 +45,9 @@ function Animals() {
                 )
               }
             >
-              <option defaultValue>ANIMALS</option>
+              <option defaultValue value={logo}>
+                ANIMALS
+              </option>
               <option value={bear}>Bear</option>
               <option value={bee}>Bee</option>
               <option value={bird}>Bird</option>

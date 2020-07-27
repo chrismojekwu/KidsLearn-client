@@ -39,16 +39,38 @@ function Clothing(props) {
       "gloves",
     ];
     const answer = {
-      backpack: ["shoulders", "back", "body", "torso", "shoulder"],
-      cap: ["head"],
-      jeans: ["legs", "leg"],
-      glasses: ["head", "eyes", "eye"],
-      shorts: ["legs", "leg"],
-      shoes: ["foot", "feet"],
-      scarf: ["head", "neck"],
-      tshirt: ["body", "torso", "chest"],
-      socks: ["foot", "feet"],
-      gloves: ["hands", "hand"],
+      backpack: [
+        "shoulders",
+        "back",
+        "body",
+        "torso",
+        "shoulder",
+        "backpack",
+        "pack",
+      ],
+      cap: ["head", "cap", "hat", "baseball hat", "baseball cap"],
+      jeans: ["legs", "leg", "jeans", "pants", "trousers"],
+      glasses: ["head", "eyes", "eye", "glasses", "sunglasses", "specticals"],
+      shorts: [
+        "legs",
+        "leg",
+        "shorts",
+        "short pants",
+        "swim trunks",
+        "swimming trunks",
+        "trunks",
+      ],
+      shoes: ["foot", "feet", "shoes", "sneakers", "trainers", "creps"],
+      scarf: ["head", "neck", "scarf"],
+      tshirt: ["body", "torso", "chest", "shirt", "t-shirt", "tee shirt"],
+      socks: ["foot", "feet", "socks", "sox", "stockings"],
+      gloves: [
+        "hands",
+        "hand",
+        "gloves",
+        "dishwashing gloves",
+        "rubber gloves",
+      ],
     };
     let score = 0;
     for (let i = 0; i < questions.length; i++) {

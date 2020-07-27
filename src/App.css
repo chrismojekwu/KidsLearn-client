@@ -63,6 +63,10 @@ input {
   width: auto;
   padding-left: 10px;
 }
+.icons:hover {
+  filter: invert(1) hue-rotate(210deg);
+  transition: 0.3s;
+}
 
 /*   HEADER/NAV   */
 nav {
@@ -195,10 +199,6 @@ nav {
   padding: 10px;
   border-radius: 5px 5px 5px 5px;
   box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.534);
-  overflow-y: auto;
-}
-.progressreport::-webkit-scrollbar {
-  display: none;
 }
 .progress-titles {
   margin-bottom: 0;
@@ -209,24 +209,55 @@ h2.progress-titles {
 .progress-values {
   margin-top: 0;
 }
+.progress-info {
+  height: 80%;
+  overflow-y: auto;
+}
+.progress-info::-webkit-scrollbar {
+  display: none;
+}
+.progress-btns {
+  margin-top: 20px;
+  text-align: center;
+}
+.report-share,
+.report-delete {
+  margin-right: 5px;
+  margin-left: 5px;
+}
 .no-reports {
   font-size: 16px;
   text-align: center;
 }
-.progress-badges {
-  border: tomato solid;
-  border-width: 1px;
-  height: 20%;
+
+/*   PROGRESS SHARE PAGE   */
+.progressreport-share {
+  cursor: pointer;
+  max-width: 450px;
+  max-height: 375px;
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.534);
+  text-align: center;
+  overflow-y: auto;
+  margin: auto;
 }
 
 /*   PROGRESS FORM   */
 .progress-form {
   border: solid gray;
+  color: rgb(102, 101, 101);
   border-width: 1px;
   height: auto;
   max-height: 500px;
   text-align: center;
   overflow-y: auto;
+  padding: 10px;
+}
+
+.prog-form-title {
+  font-size: 12px;
 }
 
 /*   INSTRUCTIONS   */
@@ -326,7 +357,7 @@ h2.progress-titles {
 }
 .selectedAnimal {
   margin-top: 2%;
-  height: 90%;
+  width: 90%;
 }
 /*CLOTHING*/
 .clothing {
@@ -401,6 +432,10 @@ canvas {
   }
   .signup {
     width: 50%;
+  }
+  .selectedAnimal {
+    height: 90%;
+    width: auto;
   }
 }
 

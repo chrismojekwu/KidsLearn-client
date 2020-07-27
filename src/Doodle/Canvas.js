@@ -1,10 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import useWindowSize from "../components/WindowSize";
 
 function Canvas(props) {
   const [drawing, setDrawing] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
+  const [width] = useState(window.innerWidth);
 
   const canvasRef = useRef();
   const context = useRef();
@@ -12,17 +10,9 @@ function Canvas(props) {
   const sideWidthX = props.sideWidth - 5;
   const navHeightY = -5;
 
-  //window.innerWidth >= 760 ?
-  //console.log(canvasRef.current)
-
   useEffect(() => {
     context.current = canvasRef.current.getContext("2d");
   }, []);
-
-  const [windowWidth, windowHeight] = useWindowSize(() => {
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight - navHeightY);
-  });
 
   function handleMouseMove(e) {
     const x = e.clientX;
@@ -66,12 +56,15 @@ function Canvas(props) {
   return (
     <canvas
       ref={canvasRef}
-      width={width - 115}
+      width={width - 250}
       height={400}
       onMouseDown={startDrawing}
       onMouseUp={stopDrawing}
       onMouseOut={stopDrawing}
       onMouseMove={handleMouseMove}
+      onTouchStart={startDrawing}
+      onTouchEnd={stopDrawing}
+      onTouchMove={handleMouseMove}
     />
   );
 }

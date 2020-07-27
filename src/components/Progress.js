@@ -39,8 +39,9 @@ function Progress(props) {
         setReports(res2);
       });
     });
-
-    //console.log(id);
+  }
+  function shareReport(id) {
+    props.history.push(`/share/${id}`);
   }
 
   const cards = reports.reverse().map((report, i) => {
@@ -49,25 +50,34 @@ function Progress(props) {
         <h2 className="progress-titles">
           {new Date(report.date_created).toUTCString().slice(0, 16)}
         </h2>
-        <h4 className="progress-titles">Letters & Words</h4>
-        <p className="progress-values">{report.letters} Correct</p>
-        <h4 className="progress-titles">Shapes & Colors</h4>
-        <p className="progress-values">{report.colors} Correct</p>
-        <h4 className="progress-titles">Things & Activities</h4>
-        <p className="progress-values">{report.objects} Correct</p>
-        <h4 className="progress-titles">Animals & Nature</h4>
-        <p className="progress-values">{report.animals} Correct</p>
-        <h4 className="progress-titles">Clothes & Body Parts</h4>
-        <p className="progress-values">{report.clothes} %</p>
-        <h4 className="progress-titles">Notes</h4>
-        <p className="progress-values">{report.comments}</p>
-        <div className="progress-badges">...</div>
-        <button
-          onClick={() => deleteReport(report.id)}
-          className="report-delete"
-        >
-          DELETE
-        </button>
+        <div className="progress-info">
+          <h4 className="progress-titles">Letters & Words</h4>
+          <p className="progress-values">{report.letters} Correct</p>
+          <h4 className="progress-titles">Shapes & Colors</h4>
+          <p className="progress-values">{report.colors} Correct</p>
+          <h4 className="progress-titles">Things & Activities</h4>
+          <p className="progress-values">{report.objects} Correct</p>
+          <h4 className="progress-titles">Animals & Nature</h4>
+          <p className="progress-values">{report.animals} Correct</p>
+          <h4 className="progress-titles">Clothes & Body Parts</h4>
+          <p className="progress-values">{report.clothes} %</p>
+          <h4 className="progress-titles">Notes</h4>
+          <p className="progress-values">{report.comments}</p>
+        </div>
+        <div className="progress-btns">
+          <button
+            onClick={() => shareReport(report.id)}
+            className="report-share"
+          >
+            SHARE
+          </button>
+          <button
+            onClick={() => deleteReport(report.id)}
+            className="report-delete"
+          >
+            DELETE
+          </button>
+        </div>
       </div>
     );
   });

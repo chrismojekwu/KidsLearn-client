@@ -41,6 +41,16 @@ const ReportsService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : true
     );
   },
+  shareReport(id) {
+    return fetch(`${config.API_ENDPOINT}/reports/share/${id}`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+      },
+    }).then((res) => {
+      return !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json();
+    });
+  },
 };
 
 export default ReportsService;

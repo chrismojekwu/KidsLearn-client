@@ -13,30 +13,44 @@ export default function () {
       <br />
       <br />
       <h3>Activities</h3>
+      <h5>LETTERS</h5>
       <p>
-        <h5>LETTERS</h5>It may be most effective to start with single letters
-        and move onto words and eventually phrases or sentences as your child
-        progresses.
-        <h5>SHAPES</h5>We suggest starting the shapes section with colors, later
-        move onto shape names & finally both the color and shape.
-        <h5>OBJECTS</h5>It may be benificial to first allow your child to
-        identify the object icons you choose to display by click, and then move
-        onto any activity that may be associated with it.
-        <h5>ANIMALS</h5>After your child can identify each or most of the
-        animals you could have them associate the colors, sounds or habitats of
-        said animal.
-        <h5>CLOTHES</h5>Clothing is an automatically graded and reported
-        activity. It shows a list of illustrations of items of clothing and the
-        answer is meant to be its corresponding part of the body. Its graded
-        automatically after clicking the button in the control section. This can
-        be interpreted differently so if you feel you have an answer that is not
-        scored correctly, please contact us using the email/letter icons at the
-        bototm of the page.
-        <h5>DOODLE</h5>Doodle is a non graded activity. It is meant to teach
-        your child how to work with the mouse/trackpad. You can take it a step
-        further and have them identify the colors but the hope is to allow them
-        to interact with the page themselves. Which could lead to them quizzing
-        themselves or others.
+        It may be most effective to start with single letters and move onto
+        words and eventually phrases or sentences as your child progresses.
+      </p>
+      <h5>SHAPES</h5>
+      <p>
+        We suggest starting the shapes section with colors, later move onto
+        shape names & finally both the color and shape.
+      </p>
+      <h5>OBJECTS</h5>
+      <p>
+        It may be benificial to first allow your child to identify the object
+        icons you choose to display by click, and then move onto any activity
+        that may be associated with it.
+      </p>
+      <h5>ANIMALS</h5>
+      <p>
+        After your child can identify each or most of the animals you could have
+        them associate the colors, sounds or habitats of said animal.
+      </p>
+      <h5>CLOTHES</h5>
+      <p>
+        Clothing is an automatically graded and reported activity. It shows a
+        list of illustrations of items of clothing and the answer is meant to be
+        its corresponding part of the body. Its graded automatically after
+        clicking the button in the control section. This can be interpreted
+        differently so if you feel you have an answer that is not scored
+        correctly, please contact us using the email/letter icons at the bototm
+        of the page.
+      </p>
+      <h5>DOODLE</h5>
+      <p>
+        Doodle is a non graded activity. It is meant to teach your child how to
+        work with the mouse/trackpad. You can take it a step further and have
+        them identify the colors but the hope is to allow them to interact with
+        the page themselves. Which could lead to them quizzing themselves or
+        others.
       </p>
       <br />
       <h3>Scoring</h3>

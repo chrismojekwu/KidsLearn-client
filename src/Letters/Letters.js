@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Letters() {
-  const [display, setDisplay] = useState("DISPLAY AREA");
+  const [display, setDisplay] = useState("Hello World");
 
   return (
     <div className="activity">

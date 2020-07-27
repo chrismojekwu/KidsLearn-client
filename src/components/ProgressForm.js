@@ -8,8 +8,7 @@ function ProgressForm(props) {
     e.preventDefault();
     const { letters, colors, objects, animals, comments } = e.target;
 
-    const clothes =
-      props.clothing === "CLOTHING TEST NOT TAKEN YET" ? 0 : props.clothing;
+    const clothes = props.clothing === "NO CLOTHING SCORE" ? 0 : props.clothing;
     setError(null);
 
     ReportsApiService.postReport({
@@ -36,7 +35,11 @@ function ProgressForm(props) {
   function renderForm() {
     return (
       <form onSubmit={handleSave} className="progress-form">
-        <label htmlFor="letters-progress" className="inputslabels">
+        <h4>Progress</h4>
+        <label
+          htmlFor="letters-progress"
+          className="inputslabels prog-form-title"
+        >
           LETTERS
         </label>
         <input
@@ -47,7 +50,10 @@ function ProgressForm(props) {
           id="letters-progress"
           className="inputslabels"
         />
-        <label htmlFor="shapes-progress" className="inputslabels">
+        <label
+          htmlFor="shapes-progress"
+          className="inputslabels prog-form-title"
+        >
           SHAPES
         </label>
         <input
@@ -58,7 +64,10 @@ function ProgressForm(props) {
           id="shapes-progress"
           className="inputslabels"
         />
-        <label htmlFor="objects-progress" className="inputslabels">
+        <label
+          htmlFor="objects-progress"
+          className="inputslabels prog-form-title"
+        >
           OBJECTS
         </label>
         <input
@@ -69,7 +78,10 @@ function ProgressForm(props) {
           id="objects-progress"
           className="inputslabels"
         />
-        <label htmlFor="animals-progress" className="inputslabels">
+        <label
+          htmlFor="animals-progress"
+          className="inputslabels prog-form-title"
+        >
           ANIMALS
         </label>
         <input
@@ -80,13 +92,13 @@ function ProgressForm(props) {
           id="animals-progress"
           className="inputslabels"
         />
-        <label htmlFor="clothes-score" className="inputslabels">
+        <label htmlFor="clothes-score" className="inputslabels prog-form-title">
           CLOTHES
         </label>
-        {props.clothing === "CLOTHING TEST NOT TAKEN YET"
+        {props.clothing === "NO CLOTHING SCORE"
           ? props.clothing
           : `${props.clothing}  %`}
-        <label htmlFor="journal" className="inputslabels">
+        <label htmlFor="journal" className="inputslabels prog-form-title">
           COMMENTS
         </label>
         <textarea id="journal" name="comments" className="inputslabels" />
