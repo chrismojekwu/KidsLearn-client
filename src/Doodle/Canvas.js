@@ -62,9 +62,9 @@ function Canvas(props) {
       onMouseUp={stopDrawing}
       onMouseOut={stopDrawing}
       onMouseMove={handleMouseMove}
-      onTouchStart={startDrawing}
-      onTouchEnd={stopDrawing}
-      onTouchMove={handleMouseMove}
+      onTouchStartCapture={startDrawing}
+      onTouchEndCapture={stopDrawing}
+      onTouchMoveCapture={startDrawing}
     />
   );
 }
