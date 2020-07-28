@@ -1,4 +1,4 @@
-![Logo](https://github.com/chrismojekwu/KidsLearn-client/blob/master/src/img/kidslearn3.png | width= 200 )
+<img src="https://github.com/chrismojekwu/KidsLearn-client/blob/master/src/img/kidslearn3.png" width="300"  />
 
 # KidsLearn
 
