@@ -1,10 +1,6 @@
 import React from "react";
 
 class Nav extends React.Component {
-  /*shouldComponentUpdate() {
-    return false;
-  }*/
-
   render() {
     return (
       <nav>
@@ -12,6 +8,7 @@ class Nav extends React.Component {
           role="button"
           onClick={() => this.props.history.push("/letters")}
           className="nav-link activity-btn"
+          tabindex="0"
         >
           LETTERS
         </div>
@@ -20,6 +17,7 @@ class Nav extends React.Component {
           role="button"
           onClick={() => this.props.history.push("/shapes")}
           className="nav-link activity-btn"
+          tabindex="0"
         >
           SHAPES
         </div>
@@ -28,6 +26,7 @@ class Nav extends React.Component {
           role="button"
           onClick={() => this.props.history.push("/objects")}
           className="nav-link activity-btn"
+          tabindex="0"
         >
           THINGS
         </div>
@@ -36,6 +35,7 @@ class Nav extends React.Component {
           role="button"
           onClick={() => this.props.history.push("/animals")}
           className="nav-link activity-btn"
+          tabindex="0"
         >
           ANIMALS
         </div>
@@ -44,6 +44,7 @@ class Nav extends React.Component {
           role="button"
           onClick={() => this.props.history.push("/clothing")}
           className="nav-link activity-btn"
+          tabindex="0"
         >
           CLOTHES
         </div>
@@ -52,6 +53,7 @@ class Nav extends React.Component {
           role="button"
           onClick={() => this.props.history.push("/doodle")}
           className="nav-link activity-btn"
+          tabindex="0"
         >
           DOODLE
         </div>

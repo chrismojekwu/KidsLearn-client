@@ -48,11 +48,6 @@ input {
   font-size: 16px;
   margin: auto;
 }
-#journal {
-  margin: auto;
-  height: 100px;
-  width: 90%;
-}
 .footy-info {
   font-size: 12px;
   padding-top: 10px;
@@ -255,9 +250,14 @@ h2.progress-titles {
   overflow-y: auto;
   padding: 10px;
 }
-
 .prog-form-title {
   font-size: 12px;
+}
+#journal {
+  margin: auto;
+  height: 100px;
+  width: 90%;
+  resize: none;
 }
 
 /*   INSTRUCTIONS   */
