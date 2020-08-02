@@ -2,16 +2,17 @@ import React, { useState } from "react";
 import AuthApiService from "../services/auth-api-service";
 
 function Signup(props) {
-  const [error, setError] = useState();
+  const [error, setError] = useState("");
   const [passwords, setPasswords] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
     const { user_name, child_name, email, password, confirm_pass } = e.target;
 
-    setError(null);
+    setError("");
+    setPasswords("");
     if (password.value !== confirm_pass.value) {
-      setPasswords("Passwords do not match");
+      setPasswords("Passwords do not match.");
       return false;
     }
     AuthApiService.postUser({
@@ -30,17 +31,19 @@ function Signup(props) {
       })
       .catch((res) => {
         setError(res.error);
-        alert(error);
       });
   }
   return (
     <div className="signup">
-      <h1>Sign Up</h1>
-      {passwords}
+      <h3>Sign up for an account</h3>
+      <div className="errors">
+        {passwords}
+        {error}
+      </div>
       <div className="signup-form">
         <form onSubmit={handleSubmit}>
           <label htmlFor="username-signup" className="inputslabels">
-            CHOOSE USERNAME
+            USERNAME
           </label>
           <input
             type="text"
@@ -67,7 +70,7 @@ function Signup(props) {
             className="inputslabels loginsignup"
           />
           <label htmlFor="password-signup" className="inputslabels">
-            CHOOSE PASSWORD
+            PASSWORD
           </label>
           <input
             type="password"
@@ -86,7 +89,7 @@ function Signup(props) {
           />
           <input
             type="submit"
-            value="Submit"
+            value="SIGN UP"
             id="signup-submit"
             className="inputslabels loginsignup"
           />

@@ -2,8 +2,8 @@ import React from "react";
 
 export default function () {
   return (
-    <div className="instructions">
-      Welcome to KidsLearn :)
+    <div className="instructions" tabIndex="0">
+      Welcome to KidsLearn
       <br />
       <br />
       All of our activities are available for your use, however to track your

@@ -3,13 +3,13 @@ import TokenService from "../services/token-service";
 import ReportsApiService from "../services/reports-api-service";
 
 function ProgressForm(props) {
-  const [error, setError] = useState();
+  const [error, setError] = useState("");
   function handleSave(e) {
     e.preventDefault();
     const { letters, colors, objects, animals, comments } = e.target;
 
     const clothes = props.clothing === "NO CLOTHING SCORE" ? 0 : props.clothing;
-    setError(null);
+    setError("");
 
     ReportsApiService.postReport({
       letters: letters.value,
@@ -29,13 +29,13 @@ function ProgressForm(props) {
       })
       .catch((res) => {
         setError(res.error);
-        alert(error);
       });
   }
   function renderForm() {
     return (
       <form onSubmit={handleSave} className="progress-form">
         <h4>Progress</h4>
+        <div className="errors">{error}</div>
         <label
           htmlFor="letters-progress"
           className="inputslabels prog-form-title"

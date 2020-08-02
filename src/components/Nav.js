@@ -4,59 +4,47 @@ class Nav extends React.Component {
   render() {
     return (
       <nav>
-        <div
-          role="button"
+        <button
           onClick={() => this.props.history.push("/letters")}
           className="nav-link activity-btn"
-          tabindex="0"
         >
           LETTERS
-        </div>
+        </button>
 
-        <div
-          role="button"
+        <button
           onClick={() => this.props.history.push("/shapes")}
           className="nav-link activity-btn"
-          tabindex="0"
         >
           SHAPES
-        </div>
+        </button>
 
-        <div
-          role="button"
+        <button
           onClick={() => this.props.history.push("/objects")}
           className="nav-link activity-btn"
-          tabindex="0"
         >
           THINGS
-        </div>
+        </button>
         {window.innerWidth < 760 ? <br /> : ""}
-        <div
-          role="button"
+        <button
           onClick={() => this.props.history.push("/animals")}
           className="nav-link activity-btn"
-          tabindex="0"
         >
           ANIMALS
-        </div>
+        </button>
 
-        <div
-          role="button"
+        <button
           onClick={() => this.props.history.push("/clothing")}
           className="nav-link activity-btn"
-          tabindex="0"
         >
           CLOTHES
-        </div>
+        </button>
 
-        <div
-          role="button"
+        <button
           onClick={() => this.props.history.push("/doodle")}
           className="nav-link activity-btn"
-          tabindex="0"
         >
           DOODLE
-        </div>
+        </button>
       </nav>
     );
   }

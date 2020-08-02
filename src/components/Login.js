@@ -4,17 +4,18 @@ import AuthApiService from "../services/auth-api-service";
 import logo from "../img/kidslearn2.png";
 
 function Login(props) {
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
 
   function handleSubmitJwtAuth(ev) {
     ev.preventDefault();
-    setError(null);
+    setError("");
     const { user_name, password } = ev.target;
     AuthApiService.postLogin({
       user_name: user_name.value,
       password: password.value,
     })
       .then((res) => {
+        console.log(res);
         user_name.value = "";
         password.value = "";
         TokenService.saveAuthToken(res.authToken);
@@ -23,14 +24,14 @@ function Login(props) {
       })
       .catch((res) => {
         setError(res.error);
-        alert(error);
       });
   }
 
   function renderform() {
     return (
       <>
-        <h1>WELCOME!</h1>
+        <h2>WELCOME</h2>
+        <div className="errors">{error}</div>
         <div className="login-form">
           <form onSubmit={handleSubmitJwtAuth}>
             <label htmlFor="username" className="inputslabels">
@@ -61,9 +62,14 @@ function Login(props) {
               className="inputslabels"
             />
           </form>
-          <a href="/sign-up" className="signup-anchor">
-            Sign Up
-          </a>
+          <p className="sign-up">
+            <button
+              onClick={() => props.history.push("/sign-up")}
+              className="signup-anchor"
+            >
+              SIGN UP
+            </button>
+          </p>
         </div>
       </>
     );
