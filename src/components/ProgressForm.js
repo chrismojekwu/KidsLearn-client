@@ -25,6 +25,7 @@ function ProgressForm(props) {
         objects.value = "";
         animals.value = "";
         comments.value = "";
+        props.clearScore();
         props.history.push("/progress");
       })
       .catch((res) => {
@@ -46,6 +47,8 @@ function ProgressForm(props) {
           type="number"
           min="0"
           max="20"
+          value={props.letters}
+          onChange={(e) => props.saveLetters(e.target.value)}
           name="letters"
           id="letters-progress"
           className="inputslabels"
@@ -60,6 +63,8 @@ function ProgressForm(props) {
           type="number"
           min="0"
           max="20"
+          value={props.shapes}
+          onChange={(e) => props.saveShapes(e.target.value)}
           name="colors"
           id="shapes-progress"
           className="inputslabels"
@@ -74,6 +79,8 @@ function ProgressForm(props) {
           type="number"
           min="0"
           max="20"
+          value={props.objects}
+          onChange={(e) => props.saveObjects(e.target.value)}
           name="objects"
           id="objects-progress"
           className="inputslabels"
@@ -88,6 +95,8 @@ function ProgressForm(props) {
           type="number"
           min="0"
           max="20"
+          value={props.animals}
+          onChange={(e) => props.saveAnimals(e.target.value)}
           name="animals"
           id="animals-progress"
           className="inputslabels"

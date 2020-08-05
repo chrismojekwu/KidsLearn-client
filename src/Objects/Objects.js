@@ -5,7 +5,7 @@ function Objects(props) {
   const [object, setObject] = useState("");
 
   const keyHandler = (e, item) => {
-    if (e.key == "Enter") {
+    if (e.key === "Enter") {
       setObject(`fas ${item} fa-10x`);
     }
   };
@@ -37,6 +37,3 @@ function Objects(props) {
 }
 
 export default Objects;
-
-/* <i value class="fas fa-couch"></i>
-                    <i class="fas fa-bicycle"></i> */

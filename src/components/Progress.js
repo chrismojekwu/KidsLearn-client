@@ -34,11 +34,17 @@ function Progress(props) {
     );
   }
   function deleteReport(id) {
-    ReportsService.deleteReport(id).then((res) => {
-      ReportsService.getReports().then((res2) => {
-        setReports(res2);
+    if (
+      window.confirm("Are you sure you want to delete this report?") === true
+    ) {
+      ReportsService.deleteReport(id).then((res) => {
+        ReportsService.getReports().then((res2) => {
+          setReports(res2);
+        });
       });
-    });
+    } else {
+      return false;
+    }
   }
   function shareReport(id) {
     props.history.push(`/share/${id}`);

@@ -21,6 +21,22 @@ function Canvas(props) {
       x - canvasRef.current.offsetLeft,
       y - canvasRef.current.offsetTop,
     ];
+    if (drawing) {
+      context.current.lineTo(...coords);
+      context.current.stroke();
+    }
+    if (props.handleMouseMove) {
+      props.handleMouseMove(...coords);
+    }
+  }
+
+  function handleTouchMove(e) {
+    const x = e.clientX;
+    const y = e.clientY - navHeightY;
+    const coords = [
+      e.changedTouches[0].clientX - 100,
+      e.changedTouches[0].clientY - 200,
+    ];
 
     if (drawing) {
       context.current.lineTo(...coords);
@@ -56,7 +72,7 @@ function Canvas(props) {
   return (
     <canvas
       ref={canvasRef}
-      width={width - 250}
+      width={window.innerWidth <= 768 ? width : width - 250}
       height={400}
       onMouseDown={startDrawing}
       onMouseUp={stopDrawing}
@@ -65,6 +81,7 @@ function Canvas(props) {
       onTouchStartCapture={startDrawing}
       onTouchEndCapture={stopDrawing}
       onTouchMoveCapture={startDrawing}
+      onTouchMove={handleTouchMove}
     />
   );
 }

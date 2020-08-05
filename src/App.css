@@ -89,7 +89,7 @@ nav {
   color: rgb(17, 16, 75);
   text-align: center;
   line-height: 28px;
-  font-size: 16px;
+  font-size: 12px;
   text-align: center;
   text-decoration: none;
   width: 19%;
@@ -225,6 +225,7 @@ nav {
 .progressreport {
   background: linear-gradient(34deg, #ffff 50%, rgb(248, 148, 198) 50%);
   min-width: 250px;
+  max-width: 250px;
   max-height: 375px;
   margin-left: 5px;
   padding: 10px;
@@ -255,6 +256,18 @@ h2.progress-titles {
 .report-delete {
   margin-right: 5px;
   margin-left: 5px;
+  background-color: transparent;
+  line-height: 20px;
+  width: 35%;
+  border-radius: 5px;
+}
+.report-share:hover {
+  background-color: rgba(120, 235, 109, 0.411);
+  transition: 0.3s;
+}
+.report-delete:hover {
+  background-color: rgba(109, 195, 235, 0.411);
+  transition: 0.3s;
 }
 .no-reports {
   font-size: 16px;
@@ -266,13 +279,13 @@ h2.progress-titles {
   cursor: pointer;
   max-width: 450px;
   max-height: 375px;
-  margin-left: 5px;
   padding: 10px;
   border-radius: 5px 5px 5px 5px;
   box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.534);
   text-align: center;
   overflow-y: auto;
   margin: auto;
+  margin-top: 20px;
 }
 
 /*   PROGRESS FORM   */
@@ -431,12 +444,16 @@ form.display {
 /*   DOODLE   */
 canvas {
   background-color: white;
+  touch-action: none;
 }
 .radiobox {
   border: 5px solid;
   width: fit-content;
   display: inline-block;
   margin-left: 5px;
+}
+.doodlecolors {
+  border: none;
 }
 
 /*   MEDIA QUERIES   */
@@ -450,6 +467,7 @@ canvas {
   }
   .nav-link {
     display: inline-block;
+    font-size: 16px;
   }
   .activity-btn {
     margin-left: 0.5%;

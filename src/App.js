@@ -25,6 +25,10 @@ class App extends React.Component {
     this.sideRef = React.createRef();
     this.state = {
       clothingScore: "NO CLOTHING SCORE",
+      letters: 0,
+      shapes: 0,
+      objects: 0,
+      animals: 0,
     };
   }
 
@@ -34,9 +38,37 @@ class App extends React.Component {
     });
   };
 
+  saveLetters = (num) => {
+    this.setState({
+      letters: num,
+    });
+  };
+
+  saveShapes = (num) => {
+    this.setState({
+      shapes: num,
+    });
+  };
+
+  saveObjects = (num) => {
+    this.setState({
+      objects: num,
+    });
+  };
+
+  saveAnimals = (num) => {
+    this.setState({
+      animals: num,
+    });
+  };
+
   clearScore = () => {
     this.setState({
       clothingScore: "NO CLOTHING SCORE",
+      letters: 0,
+      shapes: 0,
+      objects: 0,
+      animals: 0,
     });
   };
 
@@ -77,7 +109,19 @@ class App extends React.Component {
                 "/clothing",
               ]}
               render={(props) => (
-                <ProgressForm clothing={this.state.clothingScore} {...props} />
+                <ProgressForm
+                  clothing={this.state.clothingScore}
+                  letters={this.state.letters}
+                  saveLetters={this.saveLetters}
+                  shapes={this.state.shapes}
+                  saveShapes={this.saveShapes}
+                  objects={this.state.objects}
+                  saveObjects={this.saveObjects}
+                  animals={this.state.animals}
+                  saveAnimals={this.saveAnimals}
+                  clearScore={this.clearScore}
+                  {...props}
+                />
               )}
             />
             <Route
