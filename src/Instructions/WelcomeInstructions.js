@@ -13,7 +13,13 @@ export default function () {
       To check progress reports or sign out please remember to click the logo at
       the top of the page.
       <br />
-      <br />A demo account is available for your use as well.
+      <br />
+      A demo account is available for your use as well.
+      <br />
+      <br />
+      Username: Demo
+      <br />
+      Password: Password1!
     </div>
   );
 }

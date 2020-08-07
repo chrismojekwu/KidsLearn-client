@@ -1,5 +1,4 @@
 /*   GLOBAL STYLES   */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -139,12 +138,16 @@ nav {
   transition: 0.3s;
 }
 #login-btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   background-color: black;
   color: white;
   width: 35%;
   line-height: 24px;
   margin-top: 20px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 #login-btn:hover {
@@ -154,10 +157,11 @@ nav {
   font-size: 16px;
   background-color: black;
   color: white;
-  width: 35%;
+  width: fit-content;
   line-height: 24px;
   margin-top: 20px;
   margin-bottom: 10px;
+  text-align: center;
 }
 .signup-anchor:hover {
   background-color: rgb(37, 56, 160);
@@ -187,6 +191,9 @@ nav {
   transition: 0.3s;
 }
 #signup-submit {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   margin-top: 10px;
   background-color: black;
   color: white;
@@ -194,6 +201,7 @@ nav {
   line-height: 24px;
   margin-top: 20px;
   margin-bottom: 10px;
+  text-align: center;
 }
 #signup-submit:hover {
   background-color: rgb(112, 25, 25);
@@ -490,6 +498,9 @@ canvas {
   .selectedAnimal {
     height: 90%;
     width: auto;
+  }
+  .signup-anchor {
+    width: 35%;
   }
 }
 

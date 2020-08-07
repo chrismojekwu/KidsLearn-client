@@ -11,7 +11,7 @@ import socks from "../img/clothes/socks.png";
 import tshirt from "../img/clothes/tshirt.png";
 const xss = require("xss");
 
-function Clothing(props) {
+function Item(props) {
   function scoreQuiz(e) {
     e.preventDefault();
     const {
@@ -63,7 +63,7 @@ function Clothing(props) {
       shoes: ["foot", "feet", "shoes", "sneakers", "trainers", "creps"],
       scarf: ["head", "neck", "scarf"],
       tshirt: ["body", "torso", "chest", "shirt", "t-shirt", "tee shirt"],
-      socks: ["foot", "feet", "socks", "sox", "stockings"],
+      socks: ["foot", "feet", "socks", "sock", "sox", "stockings"],
       gloves: [
         "hands",
         "hand",
@@ -100,6 +100,7 @@ function Clothing(props) {
               name="backpack"
               type="text"
               className="clothing-input"
+              placeholder="Item or Body Part"
             />
           </div>
 
@@ -109,7 +110,13 @@ function Clothing(props) {
               alt="Illustration of a baseball cap"
               className="clothing-image"
             />
-            <input required name="cap" type="text" className="clothing-input" />
+            <input
+              required
+              name="cap"
+              type="text"
+              className="clothing-input"
+              placeholder="Item or Body Part"
+            />
           </div>
 
           <div className="quiz-pair">
@@ -123,6 +130,7 @@ function Clothing(props) {
               name="jeans"
               type="text"
               className="clothing-input"
+              placeholder="Item or Body Part"
             />
           </div>
 
@@ -137,6 +145,7 @@ function Clothing(props) {
               name="glasses"
               type="text"
               className="clothing-input"
+              placeholder="Item or Body Part"
             />
           </div>
 
@@ -151,6 +160,7 @@ function Clothing(props) {
               name="shorts"
               type="text"
               className="clothing-input"
+              placeholder="Item or Body Part"
             />
           </div>
 
@@ -165,6 +175,7 @@ function Clothing(props) {
               name="shoes"
               type="text"
               className="clothing-input"
+              placeholder="Item or Body Part"
             />
           </div>
 
@@ -179,6 +190,7 @@ function Clothing(props) {
               name="scarf"
               type="text"
               className="clothing-input"
+              placeholder="Item or Body Part"
             />
           </div>
 
@@ -193,6 +205,7 @@ function Clothing(props) {
               name="tshirt"
               type="text"
               className="clothing-input"
+              placeholder="Item or Body Part"
             />
           </div>
 
@@ -207,6 +220,7 @@ function Clothing(props) {
               name="socks"
               type="text"
               className="clothing-input"
+              placeholder="Item or Body Part"
             />
           </div>
 
@@ -221,6 +235,7 @@ function Clothing(props) {
               name="gloves"
               type="text"
               className="clothing-input"
+              placeholder="Item or Body Part"
             />
           </div>
         </form>
@@ -239,4 +254,4 @@ function Clothing(props) {
   );
 }
 
-export default Clothing;
+export default Item;

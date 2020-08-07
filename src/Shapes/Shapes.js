@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Shapes(props) {
+function Shapes() {
   const [shape, setShape] = useState("br");
   const [color, setColor] = useState("transparent");
 

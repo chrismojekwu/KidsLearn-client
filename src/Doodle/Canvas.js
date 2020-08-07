@@ -31,8 +31,6 @@ function Canvas(props) {
   }
 
   function handleTouchMove(e) {
-    const x = e.clientX;
-    const y = e.clientY - navHeightY;
     const coords = [
       e.changedTouches[0].clientX - 100,
       e.changedTouches[0].clientY - 200,
