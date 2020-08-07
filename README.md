@@ -31,7 +31,7 @@ View the initial wire frames here:(https://gist.github.com/chrismojekwu/562ec191
 <img src="https://github.com/chrismojekwu/KidsLearn-client/blob/master/src/img/screendesk1.png" width="800">
 <img src="https://github.com/chrismojekwu/KidsLearn-client/blob/master/src/img/screendesk2.png" width="800">
 <img src="https://github.com/chrismojekwu/KidsLearn-client/blob/master/src/img/screenmobile1.png" height="800" >
-<img src="https://github.com/chrismojekwu/KidsLearn-client/blob/master/src/img/screenmobile2.png" height="800" >
+<img src="https://github.com/chrismojekwu/KidsLearn-client/blob/master/src/img/screenmobile2.png" height="800">
 
 ## Technology
 
