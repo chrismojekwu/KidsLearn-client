@@ -62,6 +62,17 @@ class App extends React.Component {
     });
   };
 
+  increment = (num) => {
+    return parseInt(num) + 1;
+  };
+
+  decrement = (num) => {
+    if (num === 0) {
+      return 0;
+    }
+    return parseInt(num) - 1;
+  };
+
   clearScore = () => {
     this.setState({
       clothingScore: "NO CLOTHING SCORE",
@@ -120,6 +131,8 @@ class App extends React.Component {
                   animals={this.state.animals}
                   saveAnimals={this.saveAnimals}
                   clearScore={this.clearScore}
+                  increment={this.increment}
+                  decrement={this.decrement}
                   {...props}
                 />
               )}

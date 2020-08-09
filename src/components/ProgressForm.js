@@ -35,8 +35,8 @@ function ProgressForm(props) {
   function renderForm() {
     return (
       <form onSubmit={handleSave} className="progress-form">
-        <h4>Progress</h4>
         <div className="errors">{error}</div>
+        <h4>Progress</h4>
         <label
           htmlFor="letters-progress"
           className="inputslabels prog-form-title"
@@ -52,7 +52,19 @@ function ProgressForm(props) {
           name="letters"
           id="letters-progress"
           className="inputslabels"
-        />
+        />{" "}
+        <button
+          type="button"
+          onClick={() => props.saveLetters(props.increment(props.letters))}
+        >
+          +
+        </button>
+        <button
+          type="button"
+          onClick={() => props.saveLetters(props.decrement(props.letters))}
+        >
+          -
+        </button>
         <label
           htmlFor="shapes-progress"
           className="inputslabels prog-form-title"
@@ -69,6 +81,18 @@ function ProgressForm(props) {
           id="shapes-progress"
           className="inputslabels"
         />
+        <button
+          type="button"
+          onClick={() => props.saveShapes(props.increment(props.shapes))}
+        >
+          +
+        </button>
+        <button
+          type="button"
+          onClick={() => props.saveShapes(props.decrement(props.shapes))}
+        >
+          -
+        </button>
         <label
           htmlFor="objects-progress"
           className="inputslabels prog-form-title"
@@ -85,6 +109,18 @@ function ProgressForm(props) {
           id="objects-progress"
           className="inputslabels"
         />
+        <button
+          type="button"
+          onClick={() => props.saveObjects(props.increment(props.objects))}
+        >
+          +
+        </button>
+        <button
+          type="button"
+          onClick={() => props.saveObjects(props.decrement(props.objects))}
+        >
+          -
+        </button>
         <label
           htmlFor="animals-progress"
           className="inputslabels prog-form-title"
@@ -101,6 +137,18 @@ function ProgressForm(props) {
           id="animals-progress"
           className="inputslabels"
         />
+        <button
+          type="button"
+          onClick={() => props.saveAnimals(props.increment(props.animals))}
+        >
+          +
+        </button>
+        <button
+          type="button"
+          onClick={() => props.saveAnimals(props.decrement(props.animals))}
+        >
+          -
+        </button>
         <label htmlFor="clothes-score" className="inputslabels prog-form-title">
           CLOTHES
         </label>
