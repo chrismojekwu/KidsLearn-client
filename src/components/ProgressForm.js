@@ -157,9 +157,15 @@ function ProgressForm(props) {
           ? props.clothing
           : `${props.clothing}  %`}
         <label htmlFor="journal" className="inputslabels prog-form-title">
-          COMMENTS
+          NOTES
         </label>
-        <textarea id="journal" name="comments" className="inputslabels" />
+        <textarea
+          id="journal"
+          value={props.comments}
+          onChange={(e) => props.saveComments(e.target.value)}
+          name="comments"
+          className="inputslabels"
+        />
         <input type="submit" value="SAVE" className="inputslabels" />
       </form>
     );

@@ -29,6 +29,7 @@ class App extends React.Component {
       shapes: 0,
       objects: 0,
       animals: 0,
+      comments: "",
       sidebar: "",
       sideBarClick: false,
     };
@@ -61,6 +62,12 @@ class App extends React.Component {
   saveAnimals = (num) => {
     this.setState({
       animals: num,
+    });
+  };
+
+  saveComments = (text) => {
+    this.setState({
+      comments: text,
     });
   };
 
@@ -156,6 +163,8 @@ class App extends React.Component {
                   saveObjects={this.saveObjects}
                   animals={this.state.animals}
                   saveAnimals={this.saveAnimals}
+                  comments={this.state.comments}
+                  saveComments={this.saveComments}
                   clearScore={this.clearScore}
                   increment={this.increment}
                   decrement={this.decrement}
