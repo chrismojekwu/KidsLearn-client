@@ -29,6 +29,8 @@ class App extends React.Component {
       shapes: 0,
       objects: 0,
       animals: 0,
+      sidebar: "",
+      sideBarClick: false,
     };
   }
 
@@ -73,6 +75,20 @@ class App extends React.Component {
     return parseInt(num) - 1;
   };
 
+  hideBar = () => {
+    this.setState({
+      sideBarClick: !this.state.sideBarClick,
+    });
+
+    this.state.sideBarClick === true
+      ? this.setState({
+          sidebar: "block",
+        })
+      : this.setState({
+          sidebar: "none",
+        });
+  };
+
   clearScore = () => {
     this.setState({
       clothingScore: "NO CLOTHING SCORE",
@@ -90,6 +106,12 @@ class App extends React.Component {
           <Link to="/progress">
             <img src={header} className="header-logo" alt="kids learn logo" />
           </Link>
+          <p className="progress-toggle">
+            <label class="switch">
+              <input onClick={() => this.hideBar()} type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </p>
         </header>
         <Route
           exact
@@ -108,7 +130,11 @@ class App extends React.Component {
           render={(props) => <Nav {...props} />}
         />
         <section className="page">
-          <section className="sidebar" ref={this.sideRef}>
+          <section
+            className="sidebar"
+            ref={this.sideRef}
+            style={{ display: this.state.sidebar }}
+          >
             <Route
               exact
               path={[

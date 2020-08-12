@@ -18,7 +18,8 @@ header {
   display: flex;
 }
 .sidebar {
-  flex: 0.5;
+  display: block;
+  flex: 100%;
   background-color: rgb(158, 207, 240);
 }
 .container {
@@ -67,6 +68,68 @@ input {
 }
 .errors {
   color: red;
+}
+/*   PROGRESS TOGGLE   */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 12px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  top: 0px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #7bd69e;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #7bd69e;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(36px);
+  -ms-transform: translateX(36px);
+  transform: translateX(36px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 12px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 /*   HEADER/NAV   */
@@ -469,6 +532,12 @@ canvas {
 @media screen and (min-width: 760px) {
   .container {
     bottom: 530px;
+  }
+  .sidebar {
+    flex: 0.5;
+  }
+  .progress-toggle {
+    display: none;
   }
   .landing {
     bottom: 0;

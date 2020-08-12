@@ -4,6 +4,7 @@ import ReportsApiService from "../services/reports-api-service";
 
 function ProgressForm(props) {
   const [error, setError] = useState("");
+
   function handleSave(e) {
     e.preventDefault();
     const { letters, colors, objects, animals, comments } = e.target;
