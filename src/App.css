@@ -278,6 +278,7 @@ nav {
   margin-left: 10px;
   position: sticky;
   left: auto;
+  display: inline-block;
 }
 .signout {
   font-size: 16px;
@@ -343,6 +344,12 @@ h2.progress-titles {
 .no-reports {
   font-size: 16px;
   text-align: center;
+}
+.prog-scroll {
+  display: none;
+  position: relative;
+  margin-left: 8px;
+  bottom: 4px;
 }
 
 /*   PROGRESS SHARE PAGE   */
@@ -538,6 +545,9 @@ canvas {
   }
   .progress-toggle {
     display: none;
+  }
+  .prog-scroll {
+    display: inline-block;
   }
   .landing {
     bottom: 0;

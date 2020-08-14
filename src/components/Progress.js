@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import TokenService from "../services/token-service";
 import ReportsService from "../services/reports-api-service";
 
 function Progress(props) {
   const [reports, setReports] = useState([]);
+  let [scrollLeft, setScrollLeft] = useState(0);
+  const progRef = useRef();
 
   useEffect(() => {
     ReportsService.getReports().then((res) => {
@@ -49,8 +51,8 @@ function Progress(props) {
   function shareReport(id) {
     props.history.push(`/share/${id}`);
   }
-
-  const cards = reports.reverse().map((report, i) => {
+  //const reversed = reports.reverse().slice();
+  const cards = reports.map((report, i) => {
     return (
       <div key={i} className="progressreport">
         <h2 className="progress-titles">
@@ -88,14 +90,48 @@ function Progress(props) {
     );
   });
 
+  const handleScrollRight = () => {
+    //progRef.current.scrollLeft += 150;
+    if (scrollLeft > progRef.current.scrollLeft) {
+      setScrollLeft(progRef.current.scrollLeft);
+    } else {
+      setScrollLeft((scrollLeft += 200));
+      progRef.current.scrollTo({
+        top: 0,
+        left: scrollLeft,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleScrollLeft = () => {
+    setScrollLeft((scrollLeft -= 200));
+    progRef.current.scrollTo({
+      top: 0,
+      left: scrollLeft,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="progress">
       <h1 className="progress-text">
         {reports.length === 0
           ? noReports()
           : `${reports[0].child_name}'s Progress`}
-      </h1>
-      <section className="card-container">{cards}</section>
+      </h1>{" "}
+      <button onClick={() => handleScrollLeft()} className="prog-scroll lefty">
+        {"<"}
+      </button>
+      <button
+        onClick={() => handleScrollRight()}
+        className="prog-scroll righty"
+      >
+        {">"}
+      </button>
+      <section className="card-container" ref={progRef}>
+        {cards.reverse()}
+      </section>
       {TokenService.hasAuthToken() ? renderSignOut() : ""}
     </div>
   );
