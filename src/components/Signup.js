@@ -46,6 +46,7 @@ function Signup(props) {
             USERNAME
           </label>
           <input
+            required
             type="text"
             name="user_name"
             id="username-signup"
@@ -55,6 +56,7 @@ function Signup(props) {
             CHILD'S FIRST NAME
           </label>
           <input
+            required
             type="text"
             name="child_name"
             id="child-signup"
@@ -64,6 +66,7 @@ function Signup(props) {
             EMAIL
           </label>
           <input
+            required
             type="text"
             name="email"
             id="email-signup"
@@ -73,6 +76,7 @@ function Signup(props) {
             PASSWORD
           </label>
           <input
+            required
             type="password"
             name="password"
             id="password-signup"
@@ -82,12 +86,14 @@ function Signup(props) {
             CONFIRM PASSWORD
           </label>
           <input
+            required
             type="password"
             name="confirm_pass"
             id="confirm-signup"
             className="inputslabels loginsignup"
           />
           <input
+            required
             type="submit"
             value="SIGN UP"
             id="signup-submit"

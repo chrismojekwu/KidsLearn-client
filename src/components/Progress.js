@@ -51,7 +51,7 @@ function Progress(props) {
   function shareReport(id) {
     props.history.push(`/share/${id}`);
   }
-  //const reversed = reports.reverse().slice();
+
   const cards = reports.map((report, i) => {
     return (
       <div key={i} className="progressreport">
@@ -91,7 +91,6 @@ function Progress(props) {
   });
 
   const handleScrollRight = () => {
-    //progRef.current.scrollLeft += 150;
     if (scrollLeft > progRef.current.scrollLeft) {
       setScrollLeft(progRef.current.scrollLeft);
     } else {
