@@ -20,6 +20,9 @@ export default function () {
       Username: Demo
       <br />
       Password: Password1!
+      <br />
+      <br />
+      * Note: The green switch under the logo hides this panel *
     </div>
   );
 }
