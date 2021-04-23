@@ -114,9 +114,9 @@ class App extends React.Component {
             <img src={header} className="header-logo" alt="kids learn logo" />
           </Link>
           <p className="progress-toggle">
-            <label class="switch">
+            <label className="switch">
               <input onClick={() => this.hideBar()} type="checkbox" />
-              <span class="slider round"></span>
+              <span className="slider round"></span>
             </label>
           </p>
         </header>
