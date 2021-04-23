@@ -22,7 +22,7 @@ function Login(props) {
         props.history.push("/progress");
       })
       .catch((res) => {
-        setError(res.error);
+        setError(res.error.message ? res.error.message : res.error);
       });
   }
 
