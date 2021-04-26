@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Doodle from "../Doodle/Doodle";
-import Canvas from "../Doodle/Canvas";
+import { render, screen } from '@testing-library/react';
+import Doodle from "./Doodle";
+import Canvas from "./Canvas";
 
 it("renders Doodle component without crashing", () => {
   const div = document.createElement("div");

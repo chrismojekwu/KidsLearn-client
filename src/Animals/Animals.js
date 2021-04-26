@@ -27,7 +27,7 @@ function Animals() {
   return (
     <div className="activity">
       <div className="animals">
-        <div className="animalsdisplay">
+        <div className="animalsdisplay" data-testid="animal-display">
           <img
             src={animal}
             className="selectedAnimal"
