@@ -2,7 +2,7 @@ import React from "react";
 
 export default function () {
   return (
-    <div className="instructions" tabIndex="0">
+    <div className="instructions" tabIndex="0" data-testid="instruction-div">
       Welcome to KidsLearn
       <br />
       <br />

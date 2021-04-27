@@ -2,7 +2,7 @@ import React from "react";
 
 export default function () {
   return (
-    <div className="instructions" tabIndex="0">
+    <div className="instructions" tabIndex="0" data-testid="instruction-div">
       Thank you for trusting KidsLearn to help the development of your little
       one. <br />
       Below are some suggestions on how to best utilize the platform. As well as

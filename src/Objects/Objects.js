@@ -19,6 +19,7 @@ function Objects(props) {
         key={index}
         id="objecticon"
         tabIndex="0"
+        data-testid="icons"
       ></i>
     );
   });
