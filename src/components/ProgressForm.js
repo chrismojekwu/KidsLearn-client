@@ -33,6 +33,7 @@ function ProgressForm(props) {
         setError(res.error);
       });
   }
+
   function renderForm() {
     return (
       <form onSubmit={handleSave} className="progress-form">
@@ -170,9 +171,10 @@ function ProgressForm(props) {
       </form>
     );
   }
+
   function renderMessage() {
     return (
-      <div className="progress-form">
+      <div className="progress-form" data-testid="nonuser-message">
         Please <a href="/sign-up">create an account</a> and/or{" "}
         <a href="/">sign in</a> to track your childs progress.
       </div>

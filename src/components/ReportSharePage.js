@@ -49,7 +49,7 @@ function ReportSharePage(props) {
     );
   });
 
-  return <div className="progress">{card}</div>;
+  return <div className="progress" data-testid="sharereport-div">{card}</div>;
 }
 
 export default ReportSharePage;

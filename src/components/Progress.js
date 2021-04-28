@@ -113,7 +113,7 @@ function Progress(props) {
   };
 
   return (
-    <div className="progress">
+    <div className="progress" data-testid="progress-div">
       <h1 className="progress-text">
         {reports.length === 0
           ? noReports()

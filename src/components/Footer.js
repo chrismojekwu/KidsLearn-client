@@ -14,17 +14,17 @@ function Footer() {
             </p>
             <p className="socials">
                 <a target="_blank" rel="noopener noreferrer" href="mailto:chrismojekwu@gmail.com">
-                    <img className="icons" src={email} alt="Email Icon" role="link" title="Email Me"/></a>
+                    <img className="icons" src={email} alt="Email Icon" role="link" title="Email Me" data-testid="social-icons"/></a>
                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/chrismojekwu">
-                    <img className="icons" src={github} alt="Github Icon" role="link" title="Github"/></a>
+                    <img className="icons" src={github} alt="Github Icon" role="link" title="Github" data-testid="social-icons"/></a>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/christopher-mojekwu-73a380126">
-                    <img className="icons" src={linkedin} alt="Linkedin Icon" role="link" title="Linkedin"/></a>
+                    <img className="icons" src={linkedin} alt="Linkedin Icon" role="link" title="Linkedin" data-testid="social-icons"/></a>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/mojek_/">
-                    <img className="icons" src={insta} alt="Instagram Icon" role="link" title="Instagram"/></a>
+                    <img className="icons" src={insta} alt="Instagram Icon" role="link" title="Instagram" data-testid="social-icons"/></a>
                 <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/mojekmojek">
-                    <img className="icons" src={twitter} alt="Twitter Icon" role="link" title="Twitter"/></a>
+                    <img className="icons" src={twitter} alt="Twitter Icon" role="link" title="Twitter" data-testid="social-icons"/></a>
                 <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/see-motion">
-                        <img className="icons" src={soundcloud} alt="Soundcloud Icon" role="link" title="Soundcloud"/></a>
+                        <img className="icons" src={soundcloud} alt="Soundcloud Icon" role="link" title="Soundcloud" data-testid="social-icons"/></a>
 
             </p>
         </>
