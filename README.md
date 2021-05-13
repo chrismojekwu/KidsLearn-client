@@ -60,16 +60,6 @@ API Documentation:
 
 KidsLearn is built to be responsive accross most devices.
 
-## Future Updates
-
-This is v1.0 of the app, but future enhancements are expected to include:
-
-- More visual effects for children.
-- A badge / reward system based on recorded scores and frequency of use.
-- Guided challenges.
-- Message board system for parents to share techniques & use ideas.
-- The ability to save and share Doodle drawings.
-
 ## Local Node scripts
 
 - To install the node project ===> npm install
